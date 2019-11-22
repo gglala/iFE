@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="news-top" class="section">
+            <h3>Some title</h3>
+            <div class="content">
+                <ul>
+                    <li><span>HTML</span><a href="">Some Link1</a></li>
+                    <li><span>JS</span><a class="active" href="">Some Link2</a></li>
+                    <li><span>CSS</span><a href="">Some Link3</a></li>
+                    <li><span>JS</span><a href="">Some Link4</a></li>
+                </ul>
+            </div>
+            <img src="">
+            <p class="">Some Text</p>
+        </div>
+        <div id="news-normal" class="section">
+            <h3>Some title</h3>
+            <div class="content">
+                <ul>
+                    <li><span>HTML</span><a href="">Some Link1</a></li>
+                    <li><span>HTML</span><a href="">Some Link2</a></li>
+                    <li><span>JS</span><a class="active" href="#">Some Link3</a></li>
+                    <li><span>CSS</span><a href="">Some Link4</a></li>
+                </ul>
+            </div>
+            <img src="">
+            <p class="">Some Text</p>
+        </div>
+    </div>
+    <script>
+
+        function getAllListItem() {
+            // 返回页面中所有li标签
+            // var li_obj = document.querySelectorAll('li');
+            // var li_res = [];
+            // for (var i = 0; i < li_obj.length; i++) {
+            //     li_res[i] = li_obj[i].tagName;
+            // }
+            // return li_res;
+            return document.querySelectorAll('li');
+        }
+
+        function findAllHtmlSpanInOneSection(sectionId) {
+            // 返回某个section下所有span中内容为HTML的span标签
+            var sec_obj = document.querySelectorAll('.section')[sectionId];
+            var span_obj = sec_obj.querySelectorAll('span');
+            var html_list = [];
+            for (var i = 0; i < span_obj.length; i++) {
+                if (span_obj[i].innerHTML == 'HTML') {
+                    html_list.push(span_obj[i]);
+                }
+            }
+            return html_list;
+        }
+
+        function findListItem(sectionId, spanCont) {
+            // 返回某个section下，所有所包含span内容为spanCont的LI标签
+            var sec_obj = document.querySelectorAll('.section')[sectionId];
+            var li_obj = sec_obj.querySelectorAll('li');
+            var spanCont_list = [];
+            for (var i = 0; i < li_obj.length; i++) {
+                if (li_obj[i].querySelector('span').innerHTML == spanCont) {
+                    spanCont_list.push(li_obj[i]);
+                }
+            }
+            return spanCont_list;
+        }
+
+        function getActiveLinkContent(sectionId) {
+            // 返回某个section下，class为active的链接中包含的文字内容
+            return document.querySelector("a.active");
+        }
+        alert(getActiveLinkContent(1));
+    </script>
+</body>
+
+</html>
