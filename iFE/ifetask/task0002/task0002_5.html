@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .drag-block {
+            position: relative;
+        }
+
+        .block {
+            width: 200px;
+            height: 479px;
+            border: 1px solid #333;
+            float: left;
+            /* position: relative; */
+        }
+
+        .move {
+            width: 200px;
+            height: 59px;
+            background-color: #929BDD;
+            border-bottom: 1px solid #333;
+            position: absolute;
+            text-align: center;
+            color: #fff;
+            line-height: 59px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: move;
+        }
+
+        /* .block .active {
+            border: 1px solid #333;
+            opacity: 0.5;
+        } */
+
+        .right-block {
+            margin-left: 300px;
+        }
+
+        .clearfix:after {
+            content: "\200B";
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>界面拖拽交互</h1>
+        <div class="drag-block clearfix">
+            <div class="block left-block">
+                <div class="move"></div>
+                <div class="move"></div>
+                <div class="move"></div>
+                <div class="move"></div>
+            </div>
+            <div class="block right-block">
+                <div class="move"></div>
+                <div class="move"></div>
+                <div class="move"></div>
+                <div class="move"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/task0002_5.js"></script>
+</body>
+
+</html>

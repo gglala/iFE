@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+
+    <style>
+        .imgRotation {
+            width: 500px;
+            height: 300px;
+            overflow: hidden; 
+            /* 可以注释掉 overflow 观察效果 */
+            position: relative;
+        }
+
+        .img-list {
+            width: 2500px;
+            font-size: 0;
+            position: absolute;
+        }
+
+        img {
+            width: 500px;
+            height: 100%;
+        }
+
+        .circle {
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            margin-left: -45px;
+        }
+
+        .circle a {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            border: 1px solid #fff;
+        }
+
+        .active {
+            background-color: #fff;
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>轮播图</h1>
+        <div class="imgRotation">
+            <div class="img-list">
+                <img src="image/1.jpg" alt="">
+                <img src="image/2.jpg" alt="">
+                <img src="image/3.jpg" alt="">
+                <img src="image/4.jpg" alt="">
+                <img src="image/5.jpg" alt="">
+            </div>
+            <div class="circle">
+                <a href="javascript:;" class="active"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/task0002_3.js"></script>
+</body>
+
+</html>
